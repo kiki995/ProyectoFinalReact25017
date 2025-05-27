@@ -15,7 +15,7 @@ Manejo de estados y efectos
 Navegación con rutas protegidas y dinámicas
 # 🚀 Cómo iniciar el proyecto
 Cloná el repositorio:
-git clone https://github.com/DiegoBottegoni/tp-react-bottegoni.git
+git clone https://github.com/kiki995/ProyectoFinalReact25017.git
 Instalá las dependencias:
 npm install
 Iniciá el proyecto en modo de desarrollo:
