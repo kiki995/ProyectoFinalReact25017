@@ -13,12 +13,14 @@ Manejo de carrito de compras
 Conexión a API externa
 Manejo de estados y efectos
 Navegación con rutas protegidas y dinámicas
-# 🚀 Cómo iniciar el proyecto
-Cloná el repositorio:
+
+🚀 Cómo iniciar el proyecto
+```Cloná el repositorio:
 git clone https://github.com/kiki995/ProyectoFinalReact25017.git
 Instalá las dependencias:
 npm install
 Iniciá el proyecto en modo de desarrollo:
 npm run dev
+
 # 🧪 En desarrollo
 Este proyecto se encuentra en desarrollo como parte de una entrega para el curso de React. Se irá completando en etapas, siguiendo los requerimientos del programa.
