@@ -34,4 +34,3 @@ npm run dev
 
 # 🧪 En desarrollo  
 Este proyecto se encuentra en desarrollo como parte de una entrega para el curso de React. Se irá completando en etapas, siguiendo los requerimientos del programa.
-
