@@ -27,7 +27,12 @@ Acá podés ir viendo el progreso: **LiveProject**
    ```bash
    git clone https://github.com/kiki995/ProyectoFinalReact25017.git
 2. Instalá las dependencias:  
-npm install
+npm install  
+npm install sweetalert2  
+npm install react-bootstrap bootstrap
+npm install font-awesome
+npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+
 
 3. Iniciá el proyecto en modo de desarrollo:  
 npm run dev
