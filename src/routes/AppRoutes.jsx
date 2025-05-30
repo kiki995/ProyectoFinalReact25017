@@ -6,10 +6,13 @@ import Login from '../pages/Login';
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/administracion" element={<Login />} />
+    <Route path="/" element={<Home />} />  
     <Route path="/Home" element={<Home />} />
-    <Route path="/ofertas" element={<Ofertas />} />
+    <Route path="/Ofertas" element={<Ofertas />} />
     <Route path="/Contacto" element={<Contacto />} />
+    <Route path="/Login" element={<Login />} />
+    <Route path="/Newtemporada" element={<Login />} />
+
   </Routes>
 );
 

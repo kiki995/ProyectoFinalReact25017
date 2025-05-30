@@ -8,3 +8,41 @@
 .ubicacion-text.error {
   color: #e57373; /* rojo claro si hay error */
 }
+
+.nav-search {
+  width: 100%;
+  align-items: center;
+}
+
+.nav-search-input {
+  flex: 1;
+  border-radius: 4px 0 0 4px;
+}
+
+.nav-search-btn {
+  border-radius: 0 4px 4px 0;
+  padding: 0.375rem 0.75rem;
+}
+
+.nav-icon-search {
+  width: 1rem;
+  height: 1rem;
+  background-image: url('/icono-lupa.svg'); /* o un ícono con FontAwesome */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.nav-btn {
+  color: white !important;
+  background-color: transparent !important;
+  border: none;
+  text-decoration: none;
+  padding: 8px 12px;
+  font-size: 1rem;
+}
+
+.nav-btn:hover {
+  color: #ccc !important; /* gris claro al pasar el mouse */
+  background-color: transparent !important;
+}
+

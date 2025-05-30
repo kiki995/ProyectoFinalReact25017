@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import tiendalogo from '../assets/tiendalogo.png';
+import tiendalogo from '../../assets/tiendalogo.png';
 
 const API_KEY = '4977122e825e4291810c6dbc0a32f380';
 

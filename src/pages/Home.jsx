@@ -9,7 +9,21 @@ const Home = () => {
     { id: 2, src: '/imagenes/banner2.jpg', alt: 'Banner 2' },
     { id: 3, src: '/imagenes/banner3.jpg', alt: 'Banner 3' },
   ];
-
+<Carousel controls indicators={false} interval={null} className="mb-4">
+  <Carousel.Item>
+    <ul className="sc-gbWDHf sc-bwGlVi iLfMZW bSkgZE">
+      <li className="sc-gQSkpc sc-ivgJuh czplQI idYpAi">Item 1</li>
+      <li className="sc-gQSkpc sc-ivgJuh czplQI idYpAi">Item 2</li>
+      <li className="sc-gQSkpc sc-ivgJuh czplQI idYpAi">Item 3</li>
+    </ul>
+  </Carousel.Item>
+<Carousel.Item>
+    <ul className="sc-gbWDHf sc-bwGlVi iLfMZW bSkgZE">
+      <li className="sc-gQSkpc sc-ivgJuh czplQI idYpAi">Item 4</li>
+      <li className="sc-gQSkpc sc-ivgJuh czplQI idYpAi">Item 5</li>
+    </ul>
+  </Carousel.Item>
+</Carousel>
   return (
     <>
       <div className="container">
@@ -25,15 +39,13 @@ const Home = () => {
               />
             </Carousel.Item>
           ))}
-        </Carousel>
-
-        <h1>Todos los productos</h1>
+        </Carousel>       
         <ProductList />
       </div>
 
       {/* Mapa de la sucursal */}
       <div className="mt-5 animate-fade">
-        <h3 className="mb-3 text-center">Nuestra Sucursal</h3>
+
         <div style={{ borderRadius: '12px', overflow: 'hidden' }}>
           <iframe
             title="Ubicación sucursal"
@@ -50,3 +62,5 @@ const Home = () => {
     </>
   );
 };
+
+export default Home;

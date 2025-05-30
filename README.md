@@ -41,26 +41,30 @@ npm run dev
 # 🧪 En desarrollo  
 Este proyecto se encuentra en desarrollo como parte de una entrega para el curso de React. Se irá completando en etapas, siguiendo los requerimientos del programa.
 
-## Estructura del proyecto ➕
-/my-app/
-├── public/                 # Archivos estáticos (favicon, imágenes públicas, etc.)
+## Estructura del proyecto ➕  
+/my-app/  
+├── public/                 # Archivos estáticos (favicon, imágenes públicas, etc.)  
 │   
-├── src/                    # Código fuente principal
-│   ├── assets/             # Imágenes, fuentes, íconos
-│   ├── components/         # Componentes reutilizables (Navbar, Footer, etc.)
-│   ├── pages/              # Páginas completas (Home.jsx, Product.jsx, etc.)
-│   ├── context/            # Archivos de contexto (React Context API)
-│   ├── hooks/              # Custom hooks (useCart.js, useFetch.js, etc.)
-│   ├── styles/             # Archivos CSS o SCSS
-│   ├── services/           # Funciones para consumir APIs
-│   ├── App.jsx             # Componente raíz
-│   ├── main.jsx            # Punto de entrada (renderiza <App />)
-│   └── routes/             # Definición de rutas si usas React Router
-├── .gitignore
-├── eslint.config.js
-└── index.html
-├── package-lock.json
-├── package.json
-├── vite.config.js
-└── README.md
+├── src/                    # Código fuente principal  
+│   ├── assets/             # Imágenes, fuentes, íconos  
+│   ├── components/         # Componentes reutilizables (Navbar, Footer, etc.)  
+│   ├── pages/              # Páginas completas (Home.jsx, Product.jsx, etc.)  
+│   ├── context/            # Archivos de contexto (React Context API)  
+│   ├── hooks/              # Custom hooks (useCart.js, useFetch.js, etc.)  
+│   ├── styles/             # Archivos CSS o SCSS  
+│   ├── services/           # Funciones para consumir APIs  
+│   ├── App.jsx             # Componente raíz  
+│   ├── main.jsx            # Punto de entrada (renderiza <App />)  
+│   └── routes/             # Definición de rutas si usas React Router  
+├── .gitignore  
+├── eslint.config.js  
+└── index.html  
+├── package-lock.json  
+├── package.json  
+├── vite.config.js  
+└── README.md  
 
+## Guardar cambios ➕    
+git commit -a  
+git pull  
+git push
