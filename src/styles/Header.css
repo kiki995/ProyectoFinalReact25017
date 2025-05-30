@@ -1,0 +1,10 @@
+.ubicacion-text {
+  font-size: 0.75rem; /* más pequeño */
+  color: #aaa; /* gris claro, más suave */
+  margin: 0;     /* para que no tenga margen extra */
+  line-height: 1.2;
+}
+
+.ubicacion-text.error {
+  color: #e57373; /* rojo claro si hay error */
+}

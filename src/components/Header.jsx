@@ -1,20 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import LogoConUbicacion from './LogoConUbicacion';
+import '../styles/Header.css'; 
 
-const Header = () => {
-      return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
-      <Container>       
-        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-          <img
-            src="https://d22fxaf9t8d39k.cloudfront.net/a43ee80043d16d6b0e30c25f90ee0e66ce0a06cd3ad3b22146097c686b31f5ad79712.png" 
-            alt="Logo"
-            className="d-inline-block align-top me-2"
-          />
-          <span>Implementado moda</span>
+export default function Header() 
+{
+  const navigate = useNavigate();
+
+
+
+  const isAuth = localStorage.getItem('auth') === 'true';
+
+  const cerrarSesion = () => 
+    {
+    localStorage.removeItem('auth');
+    navigate('/login');
+  };
+
+  return (
+    <Navbar expand="md" variant="dark" bg="black" className="sb-topnav mb-4">
+      <Container>
+        <Navbar.Brand as={Link} to="/" className="d-flex flex-column align-items-start">
+          <LogoConUbicacion />
         </Navbar.Brand>
 
         <Nav className="ms-auto align-items-center">
@@ -35,6 +45,3 @@ const Header = () => {
     </Navbar>
   );
 };
-
-
-export default Header;

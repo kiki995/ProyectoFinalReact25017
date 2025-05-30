@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import '../styles/ProductCard.css';
 
 const ProductCard = ({ product, agregarAlCarrito }) => {
   return (
@@ -10,11 +11,11 @@ const ProductCard = ({ product, agregarAlCarrito }) => {
         variant="top"
         src={product.image}
         alt={product.title}
-        className="card-img-top img-fluid" 
-        style={{ height: '200px', objectFit: 'cover' }} 
+        className="card-img-top img-fluid product-img"
       />
 
-      <Card.Body className="d-flex flex-column">
+
+      <Card.Body className="d-flex flex-column h-100">
         <Card.Title>{product.title}</Card.Title>
         <Card.Text>
           {product.description.slice(0, 100)}...
@@ -22,13 +23,15 @@ const ProductCard = ({ product, agregarAlCarrito }) => {
         <Card.Text>
           <strong>${product.price}</strong>
         </Card.Text>
-        <Button variant="primary" onClick={() => agregarAlCarrito(product)}>
+        <Button variant="primary" onClick={() => agregarAlCarrito(product)} className='mt-auto'>
           Agregar al carrito
         </Button>
       </Card.Body>
     </Card>
   );
 };
+
+
 
 export default ProductCard;
 // Este componente ProductCard recibe un producto y una función para agregarlo al carrito.
