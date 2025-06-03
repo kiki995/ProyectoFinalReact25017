@@ -10,3 +10,13 @@ export async function fetchProducts(category = null) {
   }
   return await response.json();
 }
+
+
+
+
+export async function fetchRandomUser() {
+  const res = await fetch('https://randomuser.me/api/');
+  if (!res.ok) throw new Error('Error al cargar usuario');
+  const data = await res.json();
+  return data.results[0];
+}

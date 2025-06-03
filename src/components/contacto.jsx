@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductList from './ProductList';
+import ProductList from './Productos/ProductList';
 import Ofertas from './Ofertas'; // Asegurate de que la ruta sea correcta
 
 const Contacto = () => {
