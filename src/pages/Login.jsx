@@ -16,7 +16,7 @@ export default function Login() {
     e.preventDefault();
     if (login(user, pass)) 
       {
-      navigate("/dashboard");
+      navigate("/Perfil");
     } else {
       setError("Usuario o contraseña inválidos");
     }

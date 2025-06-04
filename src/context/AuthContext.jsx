@@ -20,8 +20,9 @@ export function AuthProvider({ children }) {
     if (username === "admin" && password === "1234") {
       const fakeToken = "dG9rZW5GYWxzbzEyMzQ=";
       const userData = {
-        nombre: "admin",
-        rol: "ADMIN",
+        nombre: "Cristian",
+        Apellido:"Miranda",
+        rol: "DESAROLLADOR",
         permisos: ["VER_USUARIOS", "EDITAR_PRODUCTOS", "VER_REPORTES"]
       };
       setToken(fakeToken);
