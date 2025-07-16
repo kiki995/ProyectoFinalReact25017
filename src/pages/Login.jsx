@@ -32,7 +32,7 @@ export default function Login() {
               <Form.Label>Usuario</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ingrese usuario"
+                placeholder="Ingrese usuario admin"
                 value={user}
                 onChange={(e) => setUser(e.target.value)}
               />
@@ -43,7 +43,7 @@ export default function Login() {
               <Form.Label>Contraseña</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Ingrese contraseña"
+                placeholder="Ingrese contraseña 1234"
                 value={pass}
                 onChange={(e) => setPass(e.target.value)}
               />

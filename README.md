@@ -6,7 +6,8 @@ Trabajo práctico del curso de React. Este proyecto es un pequeño e-commerce qu
 
 Acá podés ir viendo el progreso del proyecto desplegado:  
 🔗 **[LiveProject](https://bellaclothes.netlify.app/)**  
-
+Usuario:admin
+Contraseña:1234
 
 ## 🛠️ Tecnologías
 
