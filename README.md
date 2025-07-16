@@ -2,24 +2,31 @@
 
 Trabajo práctico del curso de React. Este proyecto es un pequeño e-commerce que permite visualizar productos y manejarlos desde un carrito de compras. Se conecta a una API pública para obtener la información de los productos y usa rutas dinámicas y protegidas para navegar entre vistas.
 
-# 🌐 TP Deployed
+## 🌐 TP Deployed
 
-Acá podés ir viendo el progreso: **LiveProject**
+Acá podés ir viendo el progreso del proyecto desplegado:  
+🔗 **[LiveProject](https://bellaclothes.netlify.app/)**  
 
-# 🛠️ Tecnologías
+
+## 🛠️ Tecnologías
 
 - React (con Vite)
-- JavaScript  
+- JavaScript (ES6+)
 - React Router DOM  
-- API externa (sugerida por el curso)  
+- SweetAlert2  
+- Bootstrap y React-Bootstrap  
+- Font Awesome  
+- API externa pública (sugerida por el curso)
 
-# 📦 Funcionalidades
+## 📦 Funcionalidades
 
-- Listado de productos  
-- Manejo de carrito de compras  
-- Conexión a API externa  
-- Manejo de estados y efectos  
-- Navegación con rutas protegidas y dinámicas  
+- ✅ Listado de productos  
+- ✅ Filtrado de productos por categoría y nombre  
+- ✅ Carrito de compras con persistencia  
+- ✅ Conexión a API externa  
+- ✅ Rutas protegidas y dinámicas  
+- ✅ Login y control de sesión (si aplica)  
+- ✅ Estilo responsive con Bootstrap  
 
 # 🚀 Cómo iniciar el proyecto
 
@@ -27,19 +34,20 @@ Acá podés ir viendo el progreso: **LiveProject**
    ```bash
    git clone https://github.com/kiki995/ProyectoFinalReact25017.git
 2. Instalá las dependencias:  
-npm install  
-npm install sweetalert2  
-npm install react-bootstrap bootstrap 
-npm install react-router-dom  
-npm install font-awesome  
+npm install
+npm install sweetalert2
+npm install react-bootstrap bootstrap
+npm install react-router-dom
+npm install font-awesome
 npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+
 
 
 3. Iniciá el proyecto en modo de desarrollo:  
 npm run dev
 
 # 🧪 En desarrollo  
-Este proyecto se encuentra en desarrollo como parte de una entrega para el curso de React. Se irá completando en etapas, siguiendo los requerimientos del programa.
+Este proyecto se encuentra finalizado.
 
 ## Estructura del proyecto ➕  
 /my-app/  

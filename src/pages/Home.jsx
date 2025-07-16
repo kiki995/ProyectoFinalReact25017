@@ -4,42 +4,11 @@ import { Carousel } from 'react-bootstrap'; // Importa Carousel
 
 
 const Home = () => {
-  const banners = [
-    { id: 1, src: '/imagenes/banner1.jpg', alt: 'Banner 1' },
-    { id: 2, src: '/imagenes/banner2.jpg', alt: 'Banner 2' },
-    { id: 3, src: '/imagenes/banner3.jpg', alt: 'Banner 3' },
-  ];
-<Carousel controls indicators={false} interval={null} className="mb-4">
-  <Carousel.Item>
-    <ul className="sc-gbWDHf sc-bwGlVi iLfMZW bSkgZE">
-      <li className="sc-gQSkpc sc-ivgJuh czplQI idYpAi">Item 1</li>
-      <li className="sc-gQSkpc sc-ivgJuh czplQI idYpAi">Item 2</li>
-      <li className="sc-gQSkpc sc-ivgJuh czplQI idYpAi">Item 3</li>
-    </ul>
-  </Carousel.Item>
-<Carousel.Item>
-    <ul className="sc-gbWDHf sc-bwGlVi iLfMZW bSkgZE">
-      <li className="sc-gQSkpc sc-ivgJuh czplQI idYpAi">Item 4</li>
-      <li className="sc-gQSkpc sc-ivgJuh czplQI idYpAi">Item 5</li>
-    </ul>
-  </Carousel.Item>
-</Carousel>
+  
+
   return (
     <>
-      <div className="container">
-        {/* Carousel de banners */}
-        <Carousel className="mb-4">
-          {banners.map((banner) => (
-            <Carousel.Item key={banner.id}>
-              <img
-                className="d-block w-100"
-                src={banner.src}
-                alt={banner.alt}
-                style={{ maxHeight: '300px', objectFit: 'cover' }}
-              />
-            </Carousel.Item>
-          ))}
-        </Carousel>       
+      <div className="container">         
         <ProductList />
       </div>
 
