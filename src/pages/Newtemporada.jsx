@@ -1,12 +1,13 @@
 import React from 'react';
 import ProductList from '../components/Productos/ProductList';
+import { Container, Alert } from 'react-bootstrap';
 
 const Newtemporada = () => {
   return (
-    <div className="container">
-      <h1>New temporada</h1>
-      <ProductList category="Clothes" />
-    </div>
+<Container className="py-4 text-center">    
+  <h1 className="mb-4">New Temporada</h1>
+  <ProductList maxPrice={100} />
+</Container>
   );
 };
 

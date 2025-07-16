@@ -1,24 +1,78 @@
-import React, { useContext } from 'react';
-import { Offcanvas, Button, ListGroup, Badge } from 'react-bootstrap';
+import React, { useContext, useState } from 'react';
+import { Offcanvas, Button, ListGroup, Alert } from 'react-bootstrap';
 import { CartContext } from '../Carrito/CartContext';
-import { X } from 'react-bootstrap-icons';
-import '../../styles/CartSidebar.css'; // Archivo CSS para estilos personalizados
+import { FaTimes, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import '../../styles/CartSidebar.css';
 
 const CartSidebar = ({ show, onHide }) => {
-  const { cart, totalItems, totalPrice, removeFromCart, updateQuantity } = useContext(CartContext);
+  const { cart, totalItems, totalPrice, removeFromCart, updateQuantity, clearCart } = useContext(CartContext);
+  const navigate = useNavigate();
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const crearPedido = async () => {
+    if (cart.length === 0) return;
+
+    setIsSubmitting(true);
+    setError(null);
+    setSuccess(false);
+
+    const pedido = {
+      id: `ORD-${Date.now()}`,
+      fecha: new Date().toISOString(),
+      status: 'Processing',
+      statusPercentage: 10,
+      total: totalPrice,
+      items: cart.map(item => ({
+        name: item.title,
+        quantity: item.quantity,
+        price: item.price,
+        image: item.images?.[0] || '/images/placeholder.jpg'
+      }))
+    };
+
+    try {
+      const existingOrders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+      localStorage.setItem('userOrders', JSON.stringify([...existingOrders, pedido]));
+
+      setSuccess(true);
+      clearCart();
+
+      setTimeout(() => {
+        onHide();
+        navigate('/my-orders');
+      }, 2000);
+    } catch (err) {
+      console.error('Error en crearPedido:', err);
+      setError('Hubo un error al guardar el pedido');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <Offcanvas 
-      show={show} 
-      onHide={onHide} 
-      placement="end"
-      style={{ top: '80px', height: 'calc(100vh - 80px)' }}
-    >
+    <Offcanvas show={show} onHide={onHide} placement="end">
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Tu Pedido ({totalItems})</Offcanvas.Title>
       </Offcanvas.Header>
 
       <Offcanvas.Body>
+        {error && (
+          <Alert variant="danger" className="d-flex align-items-center">
+            <FaExclamationTriangle className="me-2" />
+            {error}
+          </Alert>
+        )}
+
+        {success && (
+          <Alert variant="success" className="d-flex align-items-center">
+            <FaCheckCircle className="me-2" />
+            Pedido creado con éxito. Redirigiendo...
+          </Alert>
+        )}
+
         {cart.length === 0 ? (
           <div className="text-center p-4">
             <p>Tu carrito está vacío</p>
@@ -73,13 +127,13 @@ const CartSidebar = ({ show, onHide }) => {
                       onClick={() => removeFromCart(item.id)}
                       aria-label="Eliminar"
                     >
-                      <X size={20} />
+                      <FaTimes size={20} />
                     </Button>
                   </div>
                 </ListGroup.Item>
               ))}
             </ListGroup>
-            
+
             <div className="cart-summary p-3 border-top">
               <div className="d-flex justify-content-between mb-2">
                 <span>Subtotal:</span>
@@ -93,10 +147,15 @@ const CartSidebar = ({ show, onHide }) => {
                 <span>Total:</span>
                 <span>${totalPrice.toFixed(2)}</span>
               </div>
-              
-          <Button variant="dark" className="w-100" onClick={onHide}>
-              Continuar compra
-            </Button>
+
+              <Button 
+                variant="dark" 
+                className="w-100 mt-3" 
+                onClick={crearPedido}
+                disabled={cart.length === 0 || isSubmitting}
+              >
+                {isSubmitting ? 'Procesando...' : 'Continuar compra'}
+              </Button>
             </div>
           </div>
         )}

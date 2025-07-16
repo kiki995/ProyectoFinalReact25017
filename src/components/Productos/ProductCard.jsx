@@ -13,7 +13,12 @@ const ProductCard = ({ product, onAddToCart }) => {  // Cambiado de agregarAlCar
           alt={product.title} 
           className="product-image"
         />
-        <div className="product-badge">Nuevo</div>
+
+{product.price < 101 && (
+            <div className="product-badge">Nuevo</div>
+          )}
+
+       
         <button 
           className="wishlist-button" 
           aria-label="Añadir a favoritos"

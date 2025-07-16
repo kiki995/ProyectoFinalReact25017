@@ -12,6 +12,7 @@ import { CartProvider } from '../components/Carrito/CartContext';
 import Perfil from '../pages/Perfil';
 import Newtemporada from '../pages/Newtemporada';
 import AdmProduct from '../pages/AdmProduct';
+import MyOrders from '../components/MyOrders';
 
 const AppRoutes = () => (
     <Routes>
@@ -27,7 +28,7 @@ const AppRoutes = () => (
       <Route path="/Perfil" element={<Perfil />} />  
       <Route path="/Newtemporada" element={<Newtemporada />} />  
       <Route path="/admin" element={<AdmProduct />} />  
-
+      <Route path="/my-orders" element={<MyOrders />} />
 
       
   </Routes>

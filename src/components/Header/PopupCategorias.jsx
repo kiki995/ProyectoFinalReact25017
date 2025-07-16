@@ -1,7 +1,7 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 
-const PopupCategorias = ({ categorias }) => {
+const PopupCategorias = ({ categorias,onSelectCategory  }) => {
   return (
     <div
       style={{
@@ -17,15 +17,17 @@ const PopupCategorias = ({ categorias }) => {
     >
       <ListGroup className="list-unstyled m-0 p-0">
         {categorias.map((cat, idx) => (
-          <ListGroup.Item
-            key={idx}
-            action
-            className="border-0 px-2 py-1"
-            style={{ backgroundColor: 'white' }}
-          >
-            {cat}
-          </ListGroup.Item>
-        ))}
+  <ListGroup.Item
+    key={cat.id || idx}
+    action
+    className="border-0 px-2 py-1"
+    style={{ backgroundColor: 'white' }}
+    onClick={() => onSelectCategory(cat)} // ⬅️ Pasar objeto completo
+  >
+    {cat.name}
+  </ListGroup.Item>
+))}
+
       </ListGroup>
     </div>
   );

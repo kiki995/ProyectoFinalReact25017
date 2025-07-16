@@ -27,10 +27,15 @@ export default function Header({ onBuscar }) {
 
   const isAuth = !!token;
 
-  const handleBuscar = (e) => {
-    e.preventDefault();
-    onBuscar(busqueda);
-  };
+const handleBuscar = (e) => {
+  e.preventDefault();
+  if (busqueda.trim() !== '') {
+    navigate(`/productos?buscar=${encodeURIComponent(busqueda.trim())}`);
+    setBusqueda('');
+  }
+};
+
+
 
   const handleLoginClick = () => {
     navigate('/login');
@@ -42,10 +47,15 @@ export default function Header({ onBuscar }) {
     navigate('/login');
   };
 
-  const handleSelectCategory = (category) => {
-    console.log('Categoría seleccionada:', category);
-    setMostrarPopup(false);
-  };
+
+
+
+const handleSelectCategory = (category) => {
+  console.log('Categoría seleccionada:', category);
+  setMostrarPopup(false);
+  navigate(`/productos?categoria=${category.id}`);
+};
+
 
   if (error) {
     console.error('Error loading categories:', error);
@@ -79,6 +89,17 @@ export default function Header({ onBuscar }) {
             </form>
 
             <div className="d-flex align-items-center">
+              <Button
+                variant="outline-info"
+                as={Link}
+                to="/my-orders"
+                style={{ marginRight: '12px' }}
+              >
+                Mis Pedidos
+              </Button>   
+
+
+              
               {!isAuth ? (
                 <>
                   <Button variant="outline-light" onClick={handleLoginClick} className="me-2">
@@ -117,7 +138,7 @@ export default function Header({ onBuscar }) {
               <Button className="nav-btn d-flex align-items-center me-2" variant="light">
                 <FontAwesomeIcon icon={faBars} className="me-2" />
                 <Link to="/productos" style={{ textDecoration: 'none', color: 'inherit' }}>
-                  Productos
+                  Categoria
                 </Link>
               </Button>
 
@@ -144,19 +165,7 @@ export default function Header({ onBuscar }) {
               <>
                 <Nav.Link as={Link} to="/admin" className="nav-btn">
                   Administrador
-                </Nav.Link>
-                <Nav.Link as={Link} to="/admin" className="nav-btn">
-                  Mantenedor
-                </Nav.Link>
-                <Nav.Link as={Link} to="/admin" className="nav-btn">
-                  Cliente
-                </Nav.Link>
-                <Nav.Link as={Link} to="/admin" className="nav-btn">
-                  Ventas
-                </Nav.Link>
-                <Nav.Link as={Link} to="/admin" className="nav-btn">
-                  Reporte
-                </Nav.Link>
+                </Nav.Link>                
                 <Nav.Link as={Link} to="/Usuarios" className="nav-btn">
                   Usuarios
                 </Nav.Link>
