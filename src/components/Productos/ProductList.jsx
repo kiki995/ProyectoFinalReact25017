@@ -3,18 +3,22 @@ import { Row, Col, Toast, ToastContainer } from 'react-bootstrap';
 import useProducts from '../../hooks/useProducts';
 import ProductCard from './ProductCard';
 import { CartContext } from '../Carrito/CartContext';
+import CartSidebar from '../Carrito/CartSidebar';
+
+
 
 const ProductList = ({ category = null }) => {
   const { products, loading } = useProducts(category);
-  const { agregarAlCarrito } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
+  const [showToast, setShowToast] = useState(false);
+  const [addedProduct, setAddedProduct] = useState('');
+  const [showCart, setShowCart] = useState(false); // Estado para controlar el sidebar
 
-  const [mostrarToast, setMostrarToast] = useState(false);
-  const [productoAgregado, setProductoAgregado] = useState('');
-
-  const handleAgregarAlCarrito = (product) => {
-    agregarAlCarrito(product);
-    setProductoAgregado(product.title);
-    setMostrarToast(true);
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setAddedProduct(product.title);
+    setShowToast(true);
+    setShowCart(true); // Mostrar el sidebar al agregar un producto
   };
 
   if (loading) return <div>Loading...</div>;
@@ -24,19 +28,16 @@ const ProductList = ({ category = null }) => {
       <Row>
         {products.map((product) => (
           <Col md={4} key={product.id} className="mb-4">
-            <ProductCard product={product} agregarAlCarrito={handleAgregarAlCarrito} />
+            <ProductCard 
+              product={product} 
+              onAddToCart={handleAddToCart}
+            />
           </Col>
         ))}
       </Row>
 
-      <ToastContainer position="top-end" className="p-3" style={{ zIndex: 9999 }}>
-        <Toast onClose={() => setMostrarToast(false)} show={mostrarToast} delay={3000} autohide bg="success">
-          <Toast.Header>
-            <strong className="me-auto">Carrito</strong>
-          </Toast.Header>
-          <Toast.Body className="text-white">Producto "{productoAgregado}" agregado al carrito</Toast.Body>
-        </Toast>
-      </ToastContainer>
+      {/* Sidebar del carrito */}
+<CartSidebar show={showCart} onHide={() => setShowCart(false)} />
     </>
   );
 };

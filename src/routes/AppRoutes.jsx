@@ -10,6 +10,8 @@ import Header from '../components/Header/Header'; // si existe
 import Footer from '../components/Footer'; // si existe
 import { CartProvider } from '../components/Carrito/CartContext';
 import Perfil from '../pages/Perfil';
+import Newtemporada from '../pages/Newtemporada';
+import AdmProduct from '../pages/AdmProduct';
 
 const AppRoutes = () => (
     <Routes>
@@ -23,6 +25,10 @@ const AppRoutes = () => (
       <Route path="/Carrito" element={<Carrito />} />
       <Route path="/Carrito" element={<Carrito />} />
       <Route path="/Perfil" element={<Perfil />} />  
+      <Route path="/Newtemporada" element={<Newtemporada />} />  
+      <Route path="/admin" element={<AdmProduct />} />  
+
+
       
   </Routes>
 

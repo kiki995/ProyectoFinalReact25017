@@ -1,0 +1,26 @@
+.cart-sidebar {
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-sidebar .offcanvas-header {
+  background-color: #212529;
+  color: white;
+}
+
+.cart-item {
+  padding: 1rem;
+  transition: background-color 0.2s;
+}
+
+.cart-item:hover {
+  background-color: #f8f9fa;
+}
+
+.quantity-selector button {
+  min-width: 30px;
+}
+
+.cart-summary {
+  background-color: #f8f9fa;
+}
